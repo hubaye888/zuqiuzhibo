@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nba直播_NBA直播_NBA视频直播_免费高清NBA赛事在线观看</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a2980;
+            --secondary-color: #26d0ce;
+            --accent-color: #ff416c;
+            --light-bg: #f8fafc;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 顶部公司名称区域 */
+        .top-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 0;
+            box-shadow: 0 5px 20px rgba(26, 41, 128, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .top-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .company-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .company-logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-logo i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .company-tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+            font-weight: 300;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* 跳转按钮区域 */
+        .action-section {
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, var(--accent-color), #ff4b2b);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 6px 15px rgba(255, 65, 108, 0.3);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            min-width: 220px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(255, 65, 108, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 6px 15px rgba(26, 41, 128, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 12px 20px rgba(26, 41, 128, 0.4);
+        }
+        
+        .button-description {
+            margin-top: 20px;
+            color: #666;
+            font-size: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* 新闻控制面板 */
+        .control-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .panel-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .panel-title i {
+            margin-right: 12px;
+            color: var(--accent-color);
+        }
+        
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            padding: 10px 22px;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .filter-btn:hover:not(.active) {
+            background: #e2e8f0;
+        }
+        
+        .refresh-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .last-updated {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .news-count {
+            background: #f1f5f9;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* 新闻区域 */
+        .news-section {
+            padding-bottom: 60px;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .news-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            backdrop-filter: blur(5px);
+        }
+        
+        .news-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .news-excerpt {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: auto;
+        }
+        
+        .news-source {
+            color: var(--primary-color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .news-source i {
+            margin-right: 8px;
+        }
+        
+        .news-date {
+            font-weight: 500;
+        }
+        
+        /* 加载状态 */
+        .loading-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary-color);
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 25px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .footer-link {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .copyright {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .news-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .company-name {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-area {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .stats {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .filter-controls {
+                justify-content: center;
+            }
+            
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .company-name {
+                font-size: 1.8rem;
+            }
+            
+            .company-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .company-logo i {
+                font-size: 2rem;
+            }
+            
+            .control-panel {
+                padding: 20px;
+            }
+            
+            .refresh-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        /* 通知样式 */
+        .notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            max-width: 350px;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .notification i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部公司名称区域 -->
+    <header class="top-header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="company-info">
+                    <div class="company-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div>
+                        <h1 class="company-name">51体育直播</h1>
+                        <p class="company-tagline">全部免费高清直播，专业主播解说</p>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalNewsCount">0</div>
+                        <div class="stat-label">新闻总数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="todayNewsCount">0</div>
+                        <div class="stat-label">今日更新</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="sourceCount">0</div>
+                        <div class="stat-label">新闻源</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 跳转按钮区域 -->
+    <section class="action-section">
+        <div class="container">			
+            <div class="action-buttons">
+				<a href="https://xmk.ee">
+                <button id="redirectBtn" class="btn" >
+                    <i class="fas fa-external-link-alt"></i> 51体育直播入口
+                </button>
+				</a>
+				<a href="https://www.XMK.ee">
+				<button id="redirectBtn" class="btn" >
+				    <i class="fas fa-external-link-alt"></i> 51体育直播app
+				</button>
+				</a>
+                <button id="refreshNewsBtn" class="btn btn-secondary">
+                    <i class="fas fa-sync-alt"></i> 刷新新闻内容
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 新闻控制面板 -->
+    <section class="control-section">
+        <div class="container">
+            <div class="control-panel">
+                <h2 class="panel-title">
+                    <i class="fas fa-filter"></i> 新闻筛选与统计
+                </h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">全部新闻</button>
+                    <button class="filter-btn" data-filter="football">足球</button>
+                    <button class="filter-btn" data-filter="basketball">篮球</button>
+                    <button class="filter-btn" data-filter="tennis">网球</button>
+                    <button class="filter-btn" data-filter="esports">电竞</button>
+                    <button class="filter-btn" data-filter="others">其他</button>
+                </div>
+                <div class="refresh-info">
+                    <div class="last-updated">
+                        <i class="far fa-clock"></i> 最后更新时间: <span id="lastUpdateTime">--</span>
+                    </div>
+                    <div class="news-count">
+                        当前显示: <span id="currentNewsCount">0</span> 条新闻
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻采集展示区域 -->
+    <section class="news-section">
+        <div class="container">
+            <!-- 加载状态 -->
+            <div id="loadingIndicator" class="loading-container">
+                <div class="spinner"></div>
+                <h3>正在从各大新闻网站爬取最新体育资讯...</h3>
+                <p>请稍候，我们正在为您采集最新的体育新闻</p>
+            </div>
+            
+            <!-- 新闻展示容器 -->
+            <div id="newsContainer" class="news-container">
+                <!-- 新闻卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-name" style="font-size: 1.8rem; margin-bottom: 10px;">51体育新闻</div>
+            <p style="color: #a0aec0; max-width: 600px; margin: 0 auto;">专业的体育新闻聚合平台，实时采集各大体育媒体资讯，为体育爱好者提供最新、最全的体育新闻</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">关于我们</a>
+                <a href="#" class="footer-link">联系我们</a>
+                <a href="#" class="footer-link">隐私政策</a>
+                <a href="#" class="footer-link">用户协议</a>
+                <a href="#" class="footer-link">广告合作</a>
+            </div>
+            <p class="copyright">© 2023 51体育新闻 版权所有 | 本平台新闻内容采集自各大体育媒体网站，仅用于展示与学习目的</p>
+        </div>
+    </footer>
+
+    <script>
+        // 模拟多个新闻源的数据
+        const newsSources = {
+            netease: {
+                name: "网易体育",
+                icon: "fas fa-newspaper",
+                color: "#E60012"
+            },
+            sina: {
+                name: "新浪体育",
+                icon: "fas fa-basketball-ball",
+                color: "#FF6B35"
+            },
+            tencent: {
+                name: "腾讯体育",
+                icon: "fas fa-tv",
+                color: "#00B4FF"
+            },
+            cctv: {
+                name: "央视体育",
+                icon: "fas fa-satellite",
+                color: "#FF0000"
+            },
+            sohu: {
+                name: "搜狐体育",
+                icon: "fas fa-futbol",
+                color: "#FF9900"
+            },
+            xinhua: {
+                name: "新华社体育",
+                icon: "fas fa-globe",
+                color: "#003366"
+            }
+        };
+
+        // 新闻分类
+        const newsCategories = [
+            { id: "football", name: "足球", icon: "fas fa-futbol" },
+            { id: "basketball", name: "篮球", icon: "fas fa-basketball-ball" },
+            { id: "tennis", name: "网球", icon: "fas fa-baseball-ball" },
+            { id: "esports", name: "电竞", icon: "fas fa-gamepad" },
+            { id: "others", name: "其他", icon: "fas fa-medal" }
+        ];
+
+        // 新闻数据池 - 实际应用中这里会通过爬虫API获取
+        const newsPool = [
+            // 足球新闻
+            { id: 1, title: "国足世预赛大名单公布，武磊领衔出战", excerpt: "中国足协正式公布新一期国家队大名单，武磊、艾克森、张琳芃等球员悉数入选，备战即将到来的世界杯预选赛。", category: "football", source: "netease", date: "2023-11-15", image: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 2, title: "英超联赛第12轮：曼城3-1战胜切尔西", excerpt: "英超焦点战曼城对阵切尔西，哈兰德梅开二度，德布劳内一传一射，曼城主场3-1击败切尔西，继续领跑积分榜。", category: "football", source: "sina", date: "2023-11-14", image: "https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 3, title: "欧冠小组赛：皇马客场2-1逆转那不勒斯", excerpt: "欧冠小组赛第五轮，皇家马德里客场挑战那不勒斯，在先失一球的情况下，贝林厄姆和罗德里戈连入两球完成逆转。", category: "football", source: "tencent", date: "2023-11-13", image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 4, title: "中超收官战：上海海港夺得2023赛季冠军", excerpt: "2023赛季中超联赛落下帷幕，上海海港在最后一轮比赛中2-0击败山东泰山，成功卫冕中超冠军。", category: "football", source: "cctv", date: "2023-11-12", image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            
+            // 篮球新闻
+            { id: 5, title: "NBA常规赛：湖人加时险胜太阳", excerpt: "NBA常规赛上演焦点对决，湖人主场迎战太阳，詹姆斯砍下32分11篮板，戴维斯贡献28分15篮板，湖人加时128-125险胜。", category: "basketball", source: "netease", date: "2023-11-15", image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 6, title: "CBA新赛季揭幕：辽宁vs广东", excerpt: "2023-2024赛季CBA联赛正式拉开帷幕，揭幕战由上赛季冠军辽宁队对阵广东队，最终辽宁102-98险胜广东。", category: "basketball", source: "sina", date: "2023-11-14", image: "https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 7, title: "WNBA总决赛：自由人队夺冠", excerpt: "WNBA总决赛落下帷幕，纽约自由人队以3-1的总比分战胜拉斯维加斯王牌队，夺得队史首个WNBA总冠军。", category: "basketball", source: "tencent", date: "2023-11-13", image: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            
+            // 网球新闻
+            { id: 8, title: "ATP年终总决赛：德约科维奇夺冠", excerpt: "ATP年终总决赛在都灵落幕，德约科维奇在决赛中2-0击败阿尔卡拉斯，第六次夺得年终总决赛冠军，追平费德勒纪录。", category: "tennis", source: "cctv", date: "2023-11-14", image: "https://images.unsplash.com/photo-1622279457486-62dcc4e2a4c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 9, title: "WTA珠海精英赛：郑钦文晋级四强", excerpt: "WTA珠海精英赛展开四分之一决赛争夺，中国选手郑钦文直落两盘击败对手，成功晋级赛事四强。", category: "tennis", source: "sohu", date: "2023-11-13", image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            
+            // 电竞新闻
+            { id: 10, title: "英雄联盟全球总决赛：T1夺冠", excerpt: "2023英雄联盟全球总决赛在首尔落幕，T1战队以3-0的比分横扫WBG战队，成功夺得队史第四座全球总决赛冠军奖杯。", category: "esports", source: "netease", date: "2023-11-12", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 11, title: "王者荣耀世界冠军杯：中国战队夺冠", excerpt: "2023王者荣耀世界冠军杯在马来西亚吉隆坡举行，中国战队以4-2的比分击败海外战队，成功卫冕世界冠军。", category: "esports", source: "tencent", date: "2023-11-11", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            
+            // 其他体育新闻
+            { id: 12, title: "F1巴西大奖赛：维斯塔潘夺冠", excerpt: "F1巴西大奖赛在英特拉格斯赛道举行，红牛车手维斯塔潘杆位发车并一路领先，最终轻松夺冠，进一步巩固车手积分榜领先优势。", category: "others", source: "xinhua", date: "2023-11-13", image: "https://images.unsplash.com/photo-1565608445086-6d8114016d2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 13, title: "杭州亚运会：中国代表团金牌榜第一", excerpt: "杭州亚运会圆满落幕，中国体育代表团以201枚金牌、111枚银牌、71枚铜牌的优异成绩位居金牌榜和奖牌榜首位。", category: "others", source: "cctv", date: "2023-10-08", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 14, title: "斯诺克国际锦标赛：丁俊晖晋级八强", excerpt: "斯诺克国际锦标赛在中国天津继续进行，中国名将丁俊晖在16强赛中以6-3击败对手，成功晋级赛事八强。", category: "others", source: "sohu", date: "2023-11-12", image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 15, title: "世界体操锦标赛：中国体操队收获3金", excerpt: "2023年世界体操锦标赛在比利时安特卫普落下帷幕，中国体操队在本届世锦赛上共收获3金2银1铜，位列奖牌榜第二。", category: "others", source: "xinhua", date: "2023-10-09", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+        ];
+
+        // 更多新闻数据用于随机生成
+        const additionalNewsTemplates = [
+            { title: "英超联赛：阿森纳3-1战胜曼联", excerpt: "英超第15轮焦点战，阿森纳主场迎战曼联，萨卡、厄德高和热苏斯各入一球，帮助枪手3-1击败红魔，继续紧追积分榜前列。", category: "football" },
+            { title: "NBA：勇士队库里伤愈复出", excerpt: "金州勇士队官方宣布，球队核心斯蒂芬·库里已经伤愈，将在下一场对阵快船的比赛中复出，这对勇士队来说无疑是个重大利好。", category: "basketball" },
+            { title: "中国女足公布亚洲杯大名单", excerpt: "中国女足公布2024年女足亚洲杯参赛大名单，王霜、张琳艳等名将悉数入选，球队目标直指冠军。", category: "football" },
+            { title: "ATP上海大师赛：阿尔卡拉斯夺冠", excerpt: "ATP上海大师赛落下帷幕，西班牙新星阿尔卡拉斯在决赛中击败梅德韦杰夫，首次夺得上海大师赛冠军。", category: "tennis" },
+            { title: "LPL春季赛：JDG豪取八连胜", excerpt: "LPL春季赛继续进行，JDG战队2-0轻松击败对手，取得开赛八连胜，继续领跑积分榜。", category: "esports" },
+            { title: "环法自行车赛：波加查夺得分站冠军", excerpt: "环法自行车赛第18赛段，斯洛文尼亚名将波加查凭借最后爬坡阶段的出色表现，成功夺得该赛段冠军。", category: "others" },
+            { title: "NBA全明星投票正式开始", excerpt: "2024年NBA全明星投票于今日正式启动，球迷可通过官方渠道为喜爱的球员投票，詹姆斯有望连续第20次入选全明星。", category: "basketball" },
+            { title: "德甲联赛：拜仁慕尼黑4-0大胜多特蒙德", excerpt: "德甲国家德比，拜仁慕尼黑主场4-0大胜多特蒙德，凯恩上演帽子戏法，拜仁继续领跑德甲积分榜。", category: "football" },
+            { title: "世界羽联总决赛：国羽收获2金1银", excerpt: "世界羽联年终总决赛在杭州落幕，中国羽毛球队在本届赛事中共收获2金1银，陈雨菲、郑思维/黄雅琼分别夺得女单和混双冠军。", category: "others" },
+            { title: "KPL春季赛：eStarPro取得六连胜", excerpt: "KPL春季赛常规赛继续进行，eStarPro战队3-1击败对手，取得六连胜，继续领跑积分榜。", category: "esports" }
+        ];
+
+        // 图片库
+        const imagePool = [
+            "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1622279457486-62dcc4e2a4c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1565608445086-6d8114016d2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        ];
+
+        // 全局变量
+        let currentNews = [];
+        let currentFilter = 'all';
+        let newsUpdateInterval;
+        
+        // DOM元素
+        const newsContainer = document.getElementById('newsContainer');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const redirectBtn = document.getElementById('redirectBtn');
+        const refreshNewsBtn = document.getElementById('refreshNewsBtn');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const totalNewsCount = document.getElementById('totalNewsCount');
+        const todayNewsCount = document.getElementById('todayNewsCount');
+        const sourceCount = document.getElementById('sourceCount');
+        const lastUpdateTime = document.getElementById('lastUpdateTime');
+        const currentNewsCount = document.getElementById('currentNewsCount');
+
+        // 工具函数：获取随机元素
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        // 生成随机新闻
+        function generateRandomNews(count) {
+            const news = [];
+            const sourceKeys = Object.keys(newsSources);
+            
+            for (let i = 0; i < count; i++) {
+                const template = getRandomElement(additionalNewsTemplates);
+                const sourceKey = getRandomElement(sourceKeys);
+                const source = newsSources[sourceKey];
+                
+                // 生成随机日期（最近7天内）
+                const randomDaysAgo = Math.floor(Math.random() * 7);
+                const date = new Date();
+                date.setDate(date.getDate() - randomDaysAgo);
+                const formattedDate = date.toISOString().split('T')[0];
+                
+                // 创建新闻对象
+                const newsItem = {
+                    id: 1000 + i,
+                    title: template.title,
+                    excerpt: template.excerpt,
+                    category: template.category,
+                    source: sourceKey,
+                    date: formattedDate,
+                    image: getRandomElement(imagePool)
+                };
+                
+                news.push(newsItem);
+            }
+            
+            return news;
+        }
+
+        // 模拟从不同新闻源爬取数据
+        function fetchNewsFromSources() {
+            // 模拟网络延迟
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    // 从新闻池中随机选择一部分新闻
+                    const selectedNews = [...newsPool];
+                    
+                    // 随机排序
+                    selectedNews.sort(() => Math.random() - 0.5);
+                    
+                    // 随机选择5-8条新闻
+                    const randomCount = Math.floor(Math.random() * 4) + 5;
+                    const randomNews = selectedNews.slice(0, randomCount);
+                    
+                    // 生成一些随机新闻补充
+                    const additionalRandomNews = generateRandomNews(3);
+                    
+                    // 合并新闻
+                    const allNews = [...randomNews, ...additionalRandomNews];
+                    
+                    // 再次随机排序
+                    allNews.sort(() => Math.random() - 0.5);
+                    
+                    resolve(allNews);
+                }, 800);
+            });
+        }
+
+        // 渲染新闻
+        function renderNews(newsArray) {
+            // 清空容器
+            newsContainer.innerHTML = '';
+            
+            if (newsArray.length === 0) {
+                newsContainer.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #666;">
+                        <i class="fas fa-inbox" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;"></i>
+                        <h3>暂无相关新闻</h3>
+                        <p>请尝试其他筛选条件或刷新新闻</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 生成新闻卡片
+            newsArray.forEach(news => {
+                const sourceInfo = newsSources[news.source];
+                const categoryInfo = newsCategories.find(cat => cat.id === news.category);
+                
+                const newsCard = document.createElement('div');
+                newsCard.className = 'news-card';
+                newsCard.setAttribute('data-category', news.category);
+                
+                newsCard.innerHTML = `
+                    <div class="news-image">
+                        <img src="${news.image}" alt="${news.title}" loading="lazy">
+                        <span class="news-category">
+                            <i class="${categoryInfo ? categoryInfo.icon : 'fas fa-medal'}"></i> 
+                            ${categoryInfo ? categoryInfo.name : '其他'}
+                        </span>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">${news.title}</h3>
+                        <p class="news-excerpt">${news.excerpt}</p>
+                        <div class="news-meta">
+                            <span class="news-source">
+                                <i class="${sourceInfo.icon}" style="color: ${sourceInfo.color}"></i> 
+                                ${sourceInfo.name}
+                            </span>
+                            <span class="news-date">${news.date}</span>
+                        </div>
+                    </div>
+                `;
+                
+                newsContainer.appendChild(newsCard);
+            });
+            
+            // 更新新闻计数
+            currentNewsCount.textContent = newsArray.length;
+        }
+
+        // 过滤新闻
+        function filterNews(category) {
+            currentFilter = category;
+            
+            if (category === 'all') {
+                renderNews(currentNews);
+            } else {
+                const filteredNews = currentNews.filter(news => news.category === category);
+                renderNews(filteredNews);
+            }
+            
+            // 更新筛选按钮状态
+            filterButtons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // 加载新闻
+        async function loadNews() {
+            // 显示加载状态
+            loadingIndicator.style.display = 'block';
+            newsContainer.style.display = 'none';
+            
+            // 获取新闻数据
+            const newsData = await fetchNewsFromSources();
+            currentNews = newsData;
+            
+            // 渲染新闻
+            filterNews(currentFilter);
+            
+            // 隐藏加载状态，显示新闻
+            loadingIndicator.style.display = 'none';
+            newsContainer.style.display = 'grid';
+            
+            // 更新统计数据
+            updateStatistics();
+            
+            // 显示通知
+            showNotification(`成功爬取 ${newsData.length} 条新闻，来自 ${getUniqueSources(newsData).length} 个新闻源`);
+        }
+
+        // 更新统计数据
+        function updateStatistics() {
+            // 总新闻数
+            totalNewsCount.textContent = newsPool.length + additionalNewsTemplates.length;
+            
+            // 今日新闻数（模拟）
+            const today = new Date().toISOString().split('T')[0];
+            const todayNews = currentNews.filter(news => news.date === today).length;
+            todayNewsCount.textContent = todayNews;
+            
+            // 新闻源数量
+            const uniqueSources = getUniqueSources(currentNews);
+            sourceCount.textContent = uniqueSources.length;
+            
+            // 最后更新时间
+            const now = new Date();
+            const formattedTime = now.toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            lastUpdateTime.textContent = formattedTime;
+        }
+
+        // 获取唯一新闻源
+        function getUniqueSources(newsArray) {
+            const sources = newsArray.map(news => news.source);
+            return [...new Set(sources)];
+        }
+
+        // 显示通知
+        function showNotification(message) {
+            // 移除已存在的通知
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // 创建通知元素
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // 3秒后自动移除
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // 页面初始化
+        function init() {
+            // 初始加载新闻
+            loadNews();
+            
+            // 设置自动刷新新闻（每60秒）
+            newsUpdateInterval = setInterval(loadNews, 60000);
+            
+            // 跳转按钮事件
+            redirectBtn.addEventListener('click', function() {
+                // 在实际应用中，这里应该跳转到真实的网易网站
+                // window.open('https://www.163.com', '_blank');
+                
+                // 模拟跳转效果
+                redirectBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 跳转中...';
+                redirectBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('在实际应用中，这里将跳转到网易(www.163.com)\n由于安全限制，此处仅作演示。');
+                    redirectBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> 前往网易新闻';
+                    redirectBtn.disabled = false;
+                }, 800);
+            });
+            
+            // 刷新新闻按钮事件
+            refreshNewsBtn.addEventListener('click', function() {
+                // 添加旋转动画
+                refreshNewsBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 爬取中...';
+                refreshNewsBtn.disabled = true;
+                
+                // 加载新闻
+                loadNews();
+                
+                // 恢复按钮状态
+                setTimeout(() => {
+                    refreshNewsBtn.innerHTML = '<i class="fas fa-sync-alt"></i> 刷新新闻内容';
+                    refreshNewsBtn.disabled = false;
+                }, 1000);
+            });
+            
+            // 筛选按钮事件
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    filterNews(filter);
+                });
+            });
+            
+            // 页面可见性变化时重新加载新闻
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden) {
+                    // 页面重新可见时，重新加载新闻
+                    loadNews();
+                }
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
